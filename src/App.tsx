@@ -24,9 +24,9 @@ export default function Playground() {
       <header className="py-4 fixed top-4 left-1/2 transform -translate-x-1/2 z-50 rounded-2xl shadow-md px-6 w-[90%] max-w-7xl">
         <div className="container mx-auto flex justify-between items-center px-4">
           <span className="font-bold text-lg">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Mozilla_Firefox_logo_2013.png"
+            <img src="logo.ico"
               alt="Logo"
-              className="w-12" />
+              className="w-10" />
           </span>
           <div className="gap-4 hidden sm:flex text-slate-200 text-md">
             <a href="#" className="hover:underline">Industries & Companies</a>
