@@ -43,7 +43,7 @@ export default function Playground() {
       <main className="relative flex min-h-dvh flex-col items-center justify-center text-center">
         <div className="relative z-10 container">
           <div className="mx-auto max-w-7xl space-y-6">
-            <h1 className="text-white font-parkinsans font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="text-slate-200 font-parkinsans font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
               <img src="/img/logo.png" alt="" className="w-24 sm:w-32 mx-auto mb-4" />
               Runutoro Japan
               <br />
