@@ -125,7 +125,7 @@ export default function App() {
                 </a>
               </span>
 
-              <div className="md:gap-8 gap-12 hidden md:flex text-xs justify-center items-center font-semibold">
+              <div className="md:gap-8 text-slate-200 gap-12 hidden md:flex text-xs justify-center items-center font-semibold">
                 <DropdownMenu>
                   <DropdownMenuTrigger>
                     <a href="/profile" className="hover:underline flex items-center">
