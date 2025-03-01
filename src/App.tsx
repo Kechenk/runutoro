@@ -184,7 +184,7 @@ export default function App() {
             <div className="relative z-10 container">
               <div className="mx-auto max-w-7xl space-y-6">
                 <h1 className="text-slate-200 font-parkinsans font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
-                  AGIM
+                  Runutoro Japan
                   <br />
                   <span
                     className="bg-gradient-to-bl to-[#43338B] via-[#3B78C7] from-[#3E99D9] bg-clip-text text-transparent
