@@ -184,7 +184,7 @@ export default function App() {
             <div className="relative z-10 container">
               <div className="mx-auto max-w-7xl space-y-6">
                 <h1 className="text-slate-200 font-parkinsans font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
-                  Runutoro Japan
+                  AGIM
                   <br />
                   <span
                     className="bg-gradient-to-bl to-[#43338B] via-[#3B78C7] from-[#3E99D9] bg-clip-text text-transparent
@@ -198,7 +198,6 @@ export default function App() {
           </main>
         </div>
 
-        {/* Section 1: Our Products */}
         <section className="py-16 px-4">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 relative">
@@ -230,7 +229,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Section 2: Our Partners */}
         <section className="py-16 px-4 bg-slate-50">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 relative">
@@ -259,7 +257,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Certificaton */}
         <section className="py-16 px-4">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 relative">
@@ -285,7 +282,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Section 3: About Us */}
         <section className="py-16 px-4 bg-slate-50">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 relative">
@@ -321,7 +317,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Footer */}
         <footer className="bg-slate-800 text-white py-12">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
