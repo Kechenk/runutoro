@@ -99,7 +99,6 @@ export default function App() {
   return (
     <>
       <div className="min-h-screen flex flex-col">
-        {/* Hero Section */}
         <div className="relative h-[75vh] overflow-hidden">
           <AnimatePresence initial={false}>
             <motion.div
