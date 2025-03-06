@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-import { DropdownMenu, DropdownMenuItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuTrigger } from "./components/ui/dropdown-menu"
 import { Button } from "./components/ui/button"
-import { BriefcaseIcon, BuildingIcon, CalendarIcon, ChevronDown, MapPinIcon, Menu, UserIcon, X } from "lucide-react"
+import { BriefcaseIcon, BuildingIcon, CalendarIcon, MapPinIcon, Menu, UserIcon, X } from "lucide-react"
 import { useLanguage } from "./context/language-context"
 import { AnimatePresence, motion } from "motion/react"
 import { CardContent, CardHeader, CardTitle } from "./components/ui/card"
@@ -25,33 +24,33 @@ export default function AboutUs() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const productData = [
-    {
-      title: t("coconutProducts"),
-      description: t("coconutDescription"),
-      img: "/icon/kelapa.png",
-    },
-    {
-      title: t("exoticSpices"),
-      description: t("spicesDescription"),
-      img: "/icon/spices.png",
-    },
-    {
-      title: t("naturalFlavors"),
-      description: t("flavorsDescription"),
-      img: "/icon/flafour.png",
-    },
-    {
-      title: t("freshSeafood"),
-      description: t("seafoodDescription"),
-      img: "/icon/seafood.png",
-    },
-    {
-      title: t("biomass"),
-      description: t("biomassDescription"),
-      img: "/icon/biomass.png",
-    },
-  ]
+  // const productData = [
+  //   {
+  //     title: t("coconutProducts"),
+  //     description: t("coconutDescription"),
+  //     img: "/icon/kelapa.png",
+  //   },
+  //   {
+  //     title: t("exoticSpices"),
+  //     description: t("spicesDescription"),
+  //     img: "/icon/spices.png",
+  //   },
+  //   {
+  //     title: t("naturalFlavors"),
+  //     description: t("flavorsDescription"),
+  //     img: "/icon/flafour.png",
+  //   },
+  //   {
+  //     title: t("freshSeafood"),
+  //     description: t("seafoodDescription"),
+  //     img: "/icon/seafood.png",
+  //   },
+  //   {
+  //     title: t("biomass"),
+  //     description: t("biomassDescription"),
+  //     img: "/icon/biomass.png",
+  //   },
+  // ]
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)

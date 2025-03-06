@@ -2,17 +2,10 @@ import { motion, AnimatePresence } from "motion/react"
 import { useEffect, useState } from "react"
 // @ts-expect-error
 import { Link as ScrollLink, Element } from "react-scroll"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
-import { ChevronDown, Facebook, Twitter, Instagram, Linkedin, Menu, X } from "lucide-react"
+import { CardTitle } from "@/components/ui/card"
+import { Facebook, Twitter, Instagram, Linkedin, Menu, X } from "lucide-react"
 import { useLanguage } from "./context/language-context"
+import { Button } from "./components/ui/button"
 
 const backgroundImages = ["/DALL.E-1.webp", "/DALL.E-2.webp", "/DALL.E-3.webp", "/DALL.E-4.webp"]
 
