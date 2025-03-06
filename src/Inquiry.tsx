@@ -62,7 +62,7 @@ export default function Inquiry() {
                 </DropdownMenuContent>
               </DropdownMenu> */}
 
-            <Button variant="ghost" className="text-white hover:bg-white/10">
+            <Button variant="ghost" className="text-black hover:bg-white/10">
               <a href="/industries">{t("Industries & Company")}</a>
             </Button>
 
