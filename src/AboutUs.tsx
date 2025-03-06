@@ -24,34 +24,6 @@ export default function AboutUs() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  // const productData = [
-  //   {
-  //     title: t("coconutProducts"),
-  //     description: t("coconutDescription"),
-  //     img: "/icon/kelapa.png",
-  //   },
-  //   {
-  //     title: t("exoticSpices"),
-  //     description: t("spicesDescription"),
-  //     img: "/icon/spices.png",
-  //   },
-  //   {
-  //     title: t("naturalFlavors"),
-  //     description: t("flavorsDescription"),
-  //     img: "/icon/flafour.png",
-  //   },
-  //   {
-  //     title: t("freshSeafood"),
-  //     description: t("seafoodDescription"),
-  //     img: "/icon/seafood.png",
-  //   },
-  //   {
-  //     title: t("biomass"),
-  //     description: t("biomassDescription"),
-  //     img: "/icon/biomass.png",
-  //   },
-  // ]
-
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
   }
@@ -104,8 +76,8 @@ export default function AboutUs() {
                 </DropdownMenuContent>
               </DropdownMenu> */}
 
-            <Button variant="ghost" className="text-black hover:bg-white/10">
-              <a href="/products">{t("Industries & Company")}</a>
+            <Button variant="ghost" className="text-white hover:bg-white/10">
+              <a href="/industries">{t("Industries & Company")}</a>
             </Button>
 
             <Button variant="ghost" className="text-black hover:bg-white/10">

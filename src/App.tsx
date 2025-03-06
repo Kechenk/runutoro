@@ -185,7 +185,7 @@ export default function Home() {
               </DropdownMenu> */}
 
               <Button variant="ghost" className="text-white hover:bg-white/10">
-                <a href="/products">{t("Industries & Company")}</a>
+                <a href="/industries">{t("Industries & Company")}</a>
               </Button>
 
               <Button variant="ghost" className="text-white hover:bg-white/10">

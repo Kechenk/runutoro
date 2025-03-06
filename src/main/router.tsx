@@ -1,12 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Playground from "@/Playground";
-import Zzz from "@/Zzz";
 import { PageIndicator } from "@/PageIndicator";
-import Profile from "@/Profile";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import Inquiry from "@/Inquiry";
 import AboutUs from "@/AboutUs";
+import Industries from "@/Industries";
 
 const router = createBrowserRouter([
   {
@@ -19,22 +17,19 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "Playground",
-    element: <div className="bg-zinc-950"><Playground /></div>
-  },
-  {
-    path: "Zzz",
+    path: "About",
     element:
-      <div className="">
-        <Zzz />
+      <div className="bg-[#f2f3f4]">
+        <AboutUs />
+        <DotPattern />
         <PageIndicator />
       </div>
   },
   {
-    path: "Profile",
+    path: "Industries",
     element:
       <div className="bg-[#f2f3f4]">
-        <Profile />
+        <Industries />
         <DotPattern />
         <PageIndicator />
       </div>
@@ -48,15 +43,6 @@ const router = createBrowserRouter([
         <PageIndicator />
       </div>
   },
-  {
-    path: "About",
-    element:
-      <div className="bg-[#f2f3f4]">
-        <AboutUs />
-        <DotPattern />
-        <PageIndicator />
-      </div>
-  }
 ]);
 
 export default router;
