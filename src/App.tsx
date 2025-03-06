@@ -167,7 +167,12 @@ export default function Home() {
 
             {/* Desktop Navigation */}
             <div className="gap-12 py-2 justify-center text-white hidden lg:flex items-center font-medium">
-              <DropdownMenu>
+
+              <Button variant="ghost" className="text-white hover:bg-white/10">
+                <a href="/">{t("home")}</a>
+              </Button>
+
+              {/* <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="text-white hover:bg-white/10">
                     {t("Industries & Company")} <ChevronDown className="ml-1 h-4 w-4" />
@@ -184,7 +189,11 @@ export default function Home() {
                     ))}
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
+
+              <Button variant="ghost" className="text-white hover:bg-white/10">
+                <a href="/products">{t("Industries & Company")}</a>
+              </Button>
 
               <Button variant="ghost" className="text-white hover:bg-white/10">
                 <a href="/about">{t("aboutUs")}</a>
@@ -247,7 +256,6 @@ export default function Home() {
           </AnimatePresence>
         </header>
 
-        {/* Hero Content */}
         <div className="relative z-20 flex h-full flex-col items-center justify-center text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -258,27 +266,27 @@ export default function Home() {
             <h1 className="text-white font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6">{t("heroTitle")}</h1>
             <p className="text-white/90 text-xl sm:text-2xl lg:text-3xl font-light mb-8">{t("heroSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ScrollLink to="products-section" smooth={true} duration={500}>
+              {/* <ScrollLink to="products-section" smooth={true} duration={500}>
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white border-none"
                 >
                   {t("exploreProducts")}
                 </Button>
-              </ScrollLink>
-              <Button
+              </ScrollLink> */}
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="text-white hover:text-black transition border-white bg-white/10"
               >
                 {t("contactUs")}
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
@@ -290,7 +298,7 @@ export default function Home() {
               transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
             />
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Products Section */}
@@ -304,44 +312,44 @@ export default function Home() {
               className="text-center mb-16"
             >
               <motion.div variants={fadeInUp}>
-                <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
+                {/* <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
                   {t("premiumQuality")}
-                </span>
+                </span> */}
               </motion.div>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent">
                   {t("ourProducts")}
                 </span>
               </motion.h2>
-              <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
+              {/* <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
                 {t("productsDescription")}
-              </motion.p>
+              </motion.p> */}
             </motion.div>
 
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
+              viewport={{ once: true, margin: "" }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center"
             >
               {productData.map((product, index) => (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="h-full border-none bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden group">
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 flex justify-center">
+                  <div className="h-full transition-all duration-500 overflow-hidden group">
+                    <div className="p-6 flex justify-center">
                       <img
                         src={product.img || "/placeholder.svg?height=100&width=100"}
                         alt={product.title}
-                        className="h-20 w-20 object-contain group-hover:scale-110 transition-transform duration-500"
+                        className="h-20 w-20 object-contain transition-transform duration-500"
                       />
                     </div>
-                    <CardHeader className="pb-2">
+                    {/* <CardHeader className="pb-2"> */}
                       <CardTitle className="text-center text-lg">{product.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
+                    {/* </CardHeader> */}
+                    {/* <CardContent>
                       <CardDescription className="text-center">{product.description}</CardDescription>
-                    </CardContent>
-                  </Card>
+                    </CardContent> */}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -359,18 +367,18 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.div variants={fadeInUp}>
-              <span className="inline-block px-4 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
+              {/* <span className="inline-block px-4 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
                 {t("trustedRelationships")}
-              </span>
+              </span> */}
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
               <span className="bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent">
                 {t("ourPartners")}
               </span>
             </motion.h2>
-            <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
+            {/* <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
               {t("partnersDescription")}
-            </motion.p>
+            </motion.p> */}
           </motion.div>
 
           <motion.div
@@ -378,15 +386,15 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {companyData.map((company, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-white rounded-lg p-6 shadow-sm hover:shadow-xl transition-all duration-300"
+                className="rounded-lg p-6 transition-all duration-300"
               >
-                <div className="h-36 flex items-center justify-center mb-4">
+                <div className="h-48 flex items-center justify-center mb-4">
                   <img
                     src={company.img || "/placeholder.svg?height=150&width=150"}
                     alt={company.title}
@@ -410,18 +418,18 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.div variants={fadeInUp}>
-              <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
+              {/* <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
                 {t("qualityAssurance")}
-              </span>
+              </span> */}
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
               <span className="bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent">
                 {t("ourCertifications")}
               </span>
             </motion.h2>
-            <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
+            {/* <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
               {t("certificationsDescription")}
-            </motion.p>
+            </motion.p> */}
           </motion.div>
 
           <motion.div
@@ -435,12 +443,12 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-white rounded-lg p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                className="rounded-lg p-6 transition-all duration-300 flex items-center justify-center"
               >
                 <img
                   src={certificate.img || "/placeholder.svg?height=120&width=120"}
                   alt={certificate.title}
-                  className="h-24 object-contain"
+                  className="h-48 object-contain"
                 />
               </motion.div>
             ))}
@@ -449,7 +457,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-24 px-4 bg-gradient-to-r from-indigo-900 to-blue-800 text-white">
+      {/* <section className="py-24 px-4 bg-gradient-to-r from-indigo-900 to-blue-800 text-white">
         <div className="container mx-auto">
           <motion.div
             initial="hidden"
@@ -528,10 +536,10 @@ export default function Home() {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action Section */}
-      <section className="py-24 px-4 bg-white">
+      {/* <section className="py-24 px-4 bg-white">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial="hidden"
@@ -562,7 +570,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-16">

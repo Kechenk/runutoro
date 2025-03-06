@@ -1,13 +1,57 @@
 import { useEffect, useState } from "react"
-import { useLanguage } from "./context/language-context"
+import { DropdownMenu, DropdownMenuItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuTrigger } from "./components/ui/dropdown-menu"
 import { Button } from "./components/ui/button"
-import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "motion/react"
+import { BriefcaseIcon, BuildingIcon, CalendarIcon, ChevronDown, MapPinIcon, Menu, UserIcon, X } from "lucide-react"
+import { useLanguage } from "./context/language-context"
+import { AnimatePresence, motion } from "motion/react"
+import { CardContent, CardHeader, CardTitle } from "./components/ui/card"
 
-export default function Inquiry() {
+const companyInfo = {
+  name: "Runutoro Japan",
+  established: "22/5/2025",
+  address: "遠藤4489番105, Fujisawa-shi, Kanagawa, Japan",
+  capital: "Japanese Yen 5 Million",
+  management: [
+    { name: "Keane Aristo Guntoro", position: "Representative Director" },
+    { name: "Terry Runudalie", position: "Director" },
+    { name: "Leo Guntoro", position: "Director" },
+  ],
+  businessDescription:
+    "Import, export, and sales of coconut, seafood, spices, spice oil, and biomass fuel-related products, as well as intermediary services for companies selling the above products.",
+}
+
+export default function AboutUs() {
   const { language, setLanguage, t } = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+
+  const productData = [
+    {
+      title: t("coconutProducts"),
+      description: t("coconutDescription"),
+      img: "/icon/kelapa.png",
+    },
+    {
+      title: t("exoticSpices"),
+      description: t("spicesDescription"),
+      img: "/icon/spices.png",
+    },
+    {
+      title: t("naturalFlavors"),
+      description: t("flavorsDescription"),
+      img: "/icon/flafour.png",
+    },
+    {
+      title: t("freshSeafood"),
+      description: t("seafoodDescription"),
+      img: "/icon/seafood.png",
+    },
+    {
+      title: t("biomass"),
+      description: t("biomassDescription"),
+      img: "/icon/biomass.png",
+    },
+  ]
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
@@ -23,7 +67,6 @@ export default function Inquiry() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
-
   return (
     <>
       <header
@@ -126,6 +169,56 @@ export default function Inquiry() {
           )}
         </AnimatePresence>
       </header>
+
+      <div className="container mx-auto px-12">
+        <div className="max-w-4xl min-h-screen justify-center flex-col flex">
+          <CardHeader>
+            <CardTitle className="text-6xl font-bold mb-12">
+              <span className="bg-gradient-to-tl from-yellow-300 to-[#17D1C6] bg-clip-text text-transparent">{companyInfo.name}</span></CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-8">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CalendarIcon className="h-5 w-5 text-gray-500" />
+                  <span className="text-md font-large">Established: {companyInfo.established}</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPinIcon className="h-5 w-5 text-gray-500 mt-1" />
+                  <span className="text-md">{companyInfo.address}</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <BuildingIcon className="h-5 w-5 text-gray-500" />
+                  <span className="text-md font-large">Capital: {companyInfo.capital}</span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold flex items-center">
+                    <UserIcon className="h-5 w-5 text-gray-500 mr-2" />
+                    Management
+                  </h3>
+                  <div className="text-left list-disc list-inside text-md pl-5 space-y-1">
+                    {companyInfo.management.map((person, index) => (
+                      <li key={index} className="pl-2">
+                        {person.name} ({person.position})
+                      </li>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-2 text-left pl-1">
+                  <h3 className="text-xl font-semibold flex items-center text-left">
+                    <BriefcaseIcon className="h-5 w-5 text-gray-500 mr-2" />
+                    Business Description
+                  </h3>
+                  <p className="text-md pl-7">{companyInfo.businessDescription}</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </div>
+      </div>
     </>
   )
 }

@@ -110,6 +110,7 @@ export default function Profile() {
                     Company Profile
                   </span>
                 </h1>
+
                 <div className="container mx-auto px-4">
                   <Card className="w-full max-w-6xl mx-auto">
                     <CardHeader>

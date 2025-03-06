@@ -6,6 +6,7 @@ import { PageIndicator } from "@/PageIndicator";
 import Profile from "@/Profile";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import Inquiry from "@/Inquiry";
+import AboutUs from "@/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,15 @@ const router = createBrowserRouter([
     element:
       <div className="bg-[#f2f3f4]">
         <Inquiry />
+        <DotPattern />
+        <PageIndicator />
+      </div>
+  },
+  {
+    path: "About",
+    element:
+      <div className="bg-[#f2f3f4]">
+        <AboutUs />
         <DotPattern />
         <PageIndicator />
       </div>

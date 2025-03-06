@@ -5,7 +5,7 @@ export const translations = {
     // Navigation
     products: "Products",
     partners: "Partners",
-    aboutUs: "About Us",
+    aboutUs: "Company Profile",
     inquiry: "Inquiry",
 
     // Hero Section
