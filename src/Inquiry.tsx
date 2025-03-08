@@ -120,7 +120,7 @@ export default function Inquiry() {
         </AnimatePresence>
       </header>
 
-     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
+     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16 md:py-16 lg:py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div className="space-y-6">
           <div>
