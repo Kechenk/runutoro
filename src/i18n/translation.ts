@@ -3,8 +3,7 @@ export type Language = "en" | "jp"
 export const translations = {
   en: {
     // Navigation
-    products: "Products",
-    partners: "Partners",
+    products: "Industries & Companies",
     aboutUs: "Company Profile",
     inquiry: "Inquiry",
 
@@ -16,25 +15,25 @@ export const translations = {
 
     // Products Section
     premiumQuality: "Premium Quality",
-    ourProducts: "Our Products",
+    ourProducts: "Industries",
     productsDescription:
       "We source the finest products from Indonesia's rich natural resources, ensuring quality and sustainability at every step.",
 
     // Product Cards
-    coconutProducts: "Coconut Products",
+    coconutProducts: "Coconut & It's Derivatives",
     coconutDescription: "Premium coconut oil, water, and derivatives sourced from sustainable Indonesian farms",
-    exoticSpices: "Exotic Spices",
+    exoticSpices: "Spices",
     spicesDescription: "Authentic Indonesian spices including nutmeg, cloves, and premium vanilla",
-    naturalFlavors: "Natural Flavors",
+    naturalFlavors: "Fragance & Flavors",
     flavorsDescription: "Pure extracts and natural flavor enhancers for culinary excellence",
-    freshSeafood: "Fresh Seafood",
+    freshSeafood: "Seafood",
     seafoodDescription: "Sustainably harvested seafood from Indonesia's pristine waters",
     biomass: "Biomass Materials",
     biomassDescription: "Eco-friendly biomass products for sustainable energy solutions",
 
     // Partners Section
     trustedRelationships: "Trusted Relationships",
-    ourPartners: "Our Partners",
+    ourPartners: "Companies",
     partnersDescription:
       "We collaborate with leading Indonesian producers to bring the highest quality products to Japanese markets.",
 
@@ -71,7 +70,7 @@ export const translations = {
   },
   jp: {
     // Navigation
-    products: "製品",
+    products: "産業と企業",
     partners: "パートナー",
     aboutUs: "会社概要",
     inquiry: "お問い合わせ",
@@ -84,7 +83,7 @@ export const translations = {
 
     // Products Section
     premiumQuality: "プレミアム品質",
-    ourProducts: "当社の製品",
+    ourProducts: "産業",
     productsDescription:
       "インドネシアの豊かな天然資源から最高品質の製品を調達し、あらゆる段階で品質と持続可能性を確保しています。",
 
@@ -103,7 +102,7 @@ export const translations = {
 
     // Partners Section
     trustedRelationships: "信頼関係",
-    ourPartners: "当社のパートナー",
+    ourPartners: "企業",
     partnersDescription: "インドネシアの主要生産者と協力して、最高品質の製品を日本市場に提供しています。",
 
     // Certification Section

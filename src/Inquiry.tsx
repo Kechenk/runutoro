@@ -32,64 +32,56 @@ export default function Inquiry() {
       >
         <div className="container mx-auto flex justify-between items-center px-2">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo.ico" alt="Runutoro Logo" className="w-10 h-10" />
+            <img
+              src="icon/runutoro.png"
+              alt="Runutoro Logo"
+              className={`w-14 absolute transition-opacity duration-500 ${isScrolled ? "opacity-0" : "opacity-100"}`}
+            />
+            <img
+              src="icon/runutoro_white.png"
+              alt="Runutoro Logo"
+              className={`w-14 transition-opacity duration-500 ${isScrolled ? "opacity-100" : "opacity-0"}`}
+            />
             <span className="font-bold text-white text-lg hidden sm:block"></span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="gap-12 py-2 justify-center hidden lg:flex items-center font-medium">
+          <div className="gap-12 py-2 justify-center text-white hidden lg:flex items-center font-medium">
 
-            <Button variant="ghost" className="text-black hover:bg-white/10">
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
               <a href="/">{t("home")}</a>
             </Button>
 
-            {/* <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-white hover:bg-white/10">
-                    {t("Industries & Company")} <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
-                  <DropdownMenuGroup>
-                    {productData.map((product, index) => (
-                      <DropdownMenuItem key={index}>
-                        <a href={`/products/${product.title.toLowerCase().replace(/\s+/g, "-")}`} className="w-full">
-                          {product.title}
-                        </a>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu> */}
-
-            <Button variant="ghost" className="text-black hover:bg-white/10">
-              <a href="/industries">{t("Industries & Company")}</a>
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
+              <a href="/industries">{t("products")}</a>
             </Button>
 
-            <Button variant="ghost" className="text-black hover:bg-white/10">
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
               <a href="/about">{t("aboutUs")}</a>
             </Button>
 
-            <Button variant="ghost" className="text-black hover:bg-white/10">
+            <Button variant="ghost" className="text-white bg-black/90">
               <a href="/inquiry">{t("inquiry")}</a>
             </Button>
           </div>
 
           {/* Language Selector */}
-          <div className="flex items-center gap-2 text-sm font-medium text-black">
-            <button
-              onClick={() => setLanguage("jp")}
-              className={`hover:underline transition-colors ${language === "jp" ? "font-bold text-blue-300" : ""}`}
-            >
-              JP
-            </button>
-            <span>|</span>
-            <button
+          <div className="flex items-center gap-2 text-sm text-black font-medium">
+            <Button
+              variant="link"
               onClick={() => setLanguage("en")}
-              className={`hover:underline transition-colors ${language === "en" ? "font-bold text-blue-300" : ""}`}
+              className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50 ${language === "en" ? "underline-offset-4 underline font-bold text-blue-300" : ""}`}
             >
               EN
-            </button>
+            </Button>
+            <span className={`${isScrolled ? "text-white" : "text-black"}`}>|</span>
+            <Button
+              variant="link"
+              onClick={() => setLanguage("jp")}
+              className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50 ${language === "jp" ? "underline-offset-4 underline font-bold text-blue-300" : ""}`}
+            >
+              JP
+            </Button>
 
             {/* Mobile Menu Button */}
             <Button variant="ghost" size="icon" className="ml-4 text-white lg:hidden" onClick={toggleMobileMenu}>
@@ -109,11 +101,8 @@ export default function Inquiry() {
               transition={{ duration: 0.3 }}
             >
               <div className="container mx-auto py-4 px-4 flex flex-col gap-4">
-                <a href="/products" className="text-white py-2 border-b border-slate-700">
-                  {t("Industries & Company")}
-                </a>
-                <a href="/partners" className="text-white py-2 border-b border-slate-700">
-                  {t("partners")}
+                <a href="/industries" className="text-white py-2 border-b border-slate-700">
+                  {t("products")}
                 </a>
                 <a href="/about" className="text-white py-2 border-b border-slate-700">
                   {t("aboutUs")}

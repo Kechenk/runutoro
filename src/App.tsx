@@ -16,7 +16,7 @@ const companyData = [
   },
   {
     title: "Ilufa",
-    img: "/companies/ilufaa.png",
+    img: "/companies/ilufaa.jpg",
   },
   {
     title: "Tru Spices",
@@ -38,16 +38,36 @@ const certificationData = [
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Food_and_Drug_Administration_logo.svg/512px-Food_and_Drug_Administration_logo.svg.png",
   },
   {
-    title: "FSSC 22000",
-    img: "/certification/fssc.png",
-  },
-  {
     title: "Halal Certified",
     img: "/certification/halal.png",
   },
   {
+    title: "FSSC 22000",
+    img: "/certification/fssc.png",
+  },
+  {
+    title: "BRCGS",
+    img: "/certification/brcgs.webp"
+  },
+  {
+    title: "SGS FSSC",
+    img: "/certification/sgs22000.png"
+  },
+  {
     title: "HACCP",
     img: "/certification/haccp.png",
+  },
+  {
+    title: "Asta",
+    img: "/certification/asta.png"
+  },
+  {
+    title: "ISO 22000",
+    img: "/certification/iso22000.png"
+  },
+  {
+    title: "SSI",
+    img: "/certification/ssi.webp"
   },
 ]
 
@@ -62,27 +82,27 @@ export default function Home() {
     {
       title: t("coconutProducts"),
       description: t("coconutDescription"),
-      img: "/icon/kelapa.png",
+      img: "/icon/kelapa1.png",
     },
     {
       title: t("exoticSpices"),
       description: t("spicesDescription"),
-      img: "/icon/spices.png",
+      img: "/icon/spices1.png",
     },
     {
       title: t("naturalFlavors"),
       description: t("flavorsDescription"),
-      img: "/icon/flafour.png",
+      img: "/icon/natural1.png",
     },
     {
       title: t("freshSeafood"),
       description: t("seafoodDescription"),
-      img: "/icon/seafood.png",
+      img: "/icon/seafood1.png",
     },
     {
       title: t("biomass"),
       description: t("biomassDescription"),
-      img: "/icon/biomass.png",
+      img: "/icon/biomass1.png",
     },
   ]
 
@@ -148,44 +168,34 @@ export default function Home() {
         </AnimatePresence>
 
         <header
-          className={`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-            isScrolled ? "bg-slate-900/90 backdrop-blur-md shadow-lg" : "bg-transparent"
-          }`}
+          className={`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-slate-900/90 backdrop-blur-md shadow-lg" : "bg-transparent"
+            }`}
         >
           <div className="container mx-auto flex justify-between items-center px-2">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo.ico" alt="Runutoro Logo" className="w-10 h-10" />
+              <img
+                src="icon/runutoro.png"
+                alt="Runutoro Logo"
+                className={`w-14 absolute transition-opacity duration-500 ${isScrolled ? "opacity-0" : "opacity-100"}`}
+              />
+
+              <img
+                src="icon/runutoro_white.png"
+                alt="Runutoro Logo"
+                className={`w-14 transition-opacity duration-500 ${isScrolled ? "opacity-100" : "opacity-0"}`}
+              />
               <span className="font-bold text-white text-lg hidden sm:block"></span>
             </a>
 
             {/* Desktop Navigation */}
             <div className="gap-12 py-2 justify-center text-white hidden lg:flex items-center font-medium">
 
-              <Button variant="ghost" className="text-white hover:bg-white/10">
+              <Button variant="ghost" className="text-white bg-white/10">
                 <a href="/">{t("home")}</a>
               </Button>
 
-              {/* <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-white hover:bg-white/10">
-                    {t("Industries & Company")} <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
-                  <DropdownMenuGroup>
-                    {productData.map((product, index) => (
-                      <DropdownMenuItem key={index}>
-                        <a href={`/products/${product.title.toLowerCase().replace(/\s+/g, "-")}`} className="w-full">
-                          {product.title}
-                        </a>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu> */}
-
               <Button variant="ghost" className="text-white hover:bg-white/10">
-                <a href="/industries">{t("Industries & Company")}</a>
+                <a href="/industries">{t("products")}</a>
               </Button>
 
               <Button variant="ghost" className="text-white hover:bg-white/10">
@@ -231,11 +241,8 @@ export default function Home() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="container mx-auto py-4 px-4 flex flex-col gap-4">
-                  <a href="/products" className="text-white py-2 border-b border-slate-700">
-                    {t("Industries & Company")}
-                  </a>
-                  <a href="/partners" className="text-white py-2 border-b border-slate-700">
-                    {t("partners")}
+                  <a href="/industries" className="text-white py-2 border-b border-slate-700">
+                    {t("products")}
                   </a>
                   <a href="/about" className="text-white py-2 border-b border-slate-700">
                     {t("aboutUs")}
@@ -294,7 +301,7 @@ export default function Home() {
         </motion.div> */}
       </div>
 
-      {/* Products Section */}
+      {/* Industries */}
       <Element name="products-section">
         <section className="py-24 px-4 bg-gradient-to-b from-white to-slate-50">
           <div className="container mx-auto">
@@ -324,20 +331,27 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "" }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {productData.map((product, index) => (
-                <motion.div key={index} variants={fadeInUp}>
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className={`rounded-lg p-6 transition-all duration-300
+                    ${index === 3 ? "md:col-start-1 md:col-end-3 md:row-start-2" :
+                      index === 4 ? "md:col-start-2 md:col-end-4 md:row-start-2" : ""
+                    }`}
+                >
                   <div className="h-full transition-all duration-500 overflow-hidden group">
                     <div className="p-6 flex justify-center">
                       <img
                         src={product.img || "/placeholder.svg?height=100&width=100"}
                         alt={product.title}
-                        className="h-20 w-20 object-contain transition-transform duration-500"
+                        className="h-36 w-36 object-contain transition-transform duration-500"
                       />
                     </div>
                     {/* <CardHeader className="pb-2"> */}
-                      <CardTitle className="text-center text-lg">{product.title}</CardTitle>
+                    <CardTitle className="text-center text-lg">{product.title}</CardTitle>
                     {/* </CardHeader> */}
                     {/* <CardContent>
                       <CardDescription className="text-center">{product.description}</CardDescription>
@@ -385,7 +399,10 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="rounded-lg p-6 transition-all duration-300"
+                className={`rounded-lg p-6 transition-all duration-300
+                    ${index === 3 ? "md:col-start-1 md:col-end-3 md:row-start-2" :
+                    index === 4 ? "md:col-start-2 md:col-end-4 md:row-start-2" : ""
+                  }`}
               >
                 <div className="h-48 flex items-center justify-center mb-4">
                   <img
@@ -429,153 +446,45 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+            viewport={{ once: true, margin: "" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {certificationData.map((certificate, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="rounded-lg p-6 transition-all duration-300 flex items-center justify-center"
+                className={`rounded-lg p-6 transition-all duration-300
+                  ${index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 w-3xl" :
+                    // index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 w-3xl" :
+                    index === 3 ? "md:col-start-3 md:col-end-4 md:row-start-2 w-md" : ""
+                  }`}
               >
-                <img
-                  src={certificate.img || "/placeholder.svg?height=120&width=120"}
-                  alt={certificate.title}
-                  className="h-48 object-contain"
-                />
+                <div className="h-full transition-all duration-500 overflow-hidden group">
+                  <div className="p-6 flex justify-center">
+                    <img
+                      src={certificate.img || "/placeholder.svg?height=100&width=100"}
+                      alt={certificate.title}
+                      className="h-48 object-contain transition-transform duration-500"
+                    />
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* About Us Section */}
-      {/* <section className="py-24 px-4 bg-gradient-to-r from-indigo-900 to-blue-800 text-white">
-        <div className="container mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
-              {t("aboutRunutoro")}
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="max-w-3xl mx-auto text-white/80 text-lg">
-              {t("aboutDescription")}
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
-          >
-            <motion.div variants={fadeInUp} className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-              <div className="bg-blue-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-center">{t("ourMission")}</h3>
-              <p className="text-white/80 text-center">{t("missionDescription")}</p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-              <div className="bg-blue-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-center">{t("ourVision")}</h3>
-              <p className="text-white/80 text-center">{t("visionDescription")}</p>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="mt-16 text-center"
-          >
-            <Button size="lg" className="bg-white text-blue-800 hover:bg-white/90">
-              {t("learnMore")}
-            </Button>
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* Call to Action Section */}
-      {/* <section className="py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-5xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-12 shadow-lg relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-200 to-indigo-200 rounded-full -mr-20 -mt-20 opacity-50"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-blue-200 to-indigo-200 rounded-full -ml-20 -mb-20 opacity-50"></div>
-
-            <div className="relative z-10">
-              <motion.div variants={fadeInUp} className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">{t("readyToImport")}</h2>
-                <p className="text-slate-700 max-w-2xl mx-auto">{t("ctaDescription")}</p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white"
-                >
-                  {t("contactToday")}
-                </Button>
-                <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-100">
-                  {t("requestCatalog")}
-                </Button>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
-
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-16">
-        <div className="container mx-auto px-4">
+      <footer className="bg-slate-900 text-white py-10">
+        <div className="container mx-auto px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div>
               <div className="flex items-center mb-6">
-                <img src="/logo.ico" alt="Runutoro Logo" className="w-10 mr-3" />
+                <img src="/icon/runutoro_white.png" alt="Runutoro Logo" className="w-10 mr-3" />
                 <h3 className="text-xl font-bold">{t("heroTitle")}</h3>
               </div>
               <p className="text-slate-300 mb-6">{t("heroSubtitle")}</p>
-              <div className="flex space-x-4">
+              {/* <div className="flex space-x-4">
                 <a href="#" className="text-slate-300 hover:text-white transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
@@ -588,7 +497,7 @@ export default function Home() {
                 <a href="#" className="text-slate-300 hover:text-white transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
-              </div>
+              </div> */}
             </div>
 
             <div>
@@ -614,22 +523,17 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
+                    {t("products")}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
                     {t("aboutUs")}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    {t("partners")}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    {t("certifications")}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    {t("contact")}
+                    {t("inquiry")}
                   </a>
                 </li>
               </ul>
@@ -659,7 +563,7 @@ export default function Home() {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  Tokyo, Japan
+                  遠藤4489番105, Fujisawa-shi, Kanagawa, Japan
                 </p>
                 <p className="flex items-center">
                   <svg
@@ -676,7 +580,7 @@ export default function Home() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  info@runutoro.jp
+                  info@runutoro.com
                 </p>
                 <p className="flex items-center">
                   <svg

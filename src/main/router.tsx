@@ -19,16 +19,16 @@ const router = createBrowserRouter([
   {
     path: "About",
     element:
-      <div className="bg-[#f2f3f4]">
+      <div className="">
+        <PageIndicator />
         <AboutUs />
         <DotPattern />
-        <PageIndicator />
       </div>
   },
   {
     path: "Industries",
     element:
-      <div className="bg-[#f2f3f4]">
+      <div className="">
         <Industries />
         <DotPattern />
         <PageIndicator />

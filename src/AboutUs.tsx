@@ -19,6 +19,25 @@ const companyInfo = {
     "Import, export, and sales of coconut, seafood, spices, spice oil, and biomass fuel-related products, as well as intermediary services for companies selling the above products.",
 }
 
+function GoogleMap({ address }: { address: string }) {
+  // Encode the address for the URL
+  const encodedAddress = encodeURIComponent(address)
+
+  return (
+    <iframe
+      src={`https://maps.google.com/maps?q=${encodedAddress}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen={false}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Company Location"
+      className="w-full h-full"
+    ></iframe>
+  )
+}
+
 export default function AboutUs() {
   const { language, setLanguage, t } = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -46,63 +65,53 @@ export default function AboutUs() {
       >
         <div className="container mx-auto flex justify-between items-center px-2">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo.ico" alt="Runutoro Logo" className="w-10 h-10" />
+            <img
+              src="icon/runutoro.png"
+              alt="Runutoro Logo"
+              className={`w-14 absolute transition-opacity duration-500 ${isScrolled ? "opacity-0" : "opacity-100"}`}
+            />
+            <img
+              src="icon/runutoro_white.png"
+              alt="Runutoro Logo"
+              className={`w-14 transition-opacity duration-500 ${isScrolled ? "opacity-100" : "opacity-0"}`}
+            />
             <span className="font-bold text-white text-lg hidden sm:block"></span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="gap-12 py-2 justify-center hidden lg:flex items-center font-medium">
+          <div className="gap-12 py-2 justify-center text-white hidden lg:flex items-center font-medium">
 
-            <Button variant="ghost" className="text-black hover:bg-white/10">
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
               <a href="/">{t("home")}</a>
             </Button>
 
-            {/* <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-white hover:bg-white/10">
-                    {t("Industries & Company")} <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
-                  <DropdownMenuGroup>
-                    {productData.map((product, index) => (
-                      <DropdownMenuItem key={index}>
-                        <a href={`/products/${product.title.toLowerCase().replace(/\s+/g, "-")}`} className="w-full">
-                          {product.title}
-                        </a>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu> */}
-
-            <Button variant="ghost" className="text-black hover:bg-white/10">
-              <a href="/industries">{t("Industries & Company")}</a>
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
+              <a href="/industries">{t("products")}</a>
             </Button>
 
-            <Button variant="ghost" className="text-black hover:bg-white/10">
+            <Button variant="ghost" className="text-white bg-black/90">
               <a href="/about">{t("aboutUs")}</a>
             </Button>
 
-            <Button variant="ghost" className="text-black hover:bg-white/10">
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
               <a href="/inquiry">{t("inquiry")}</a>
             </Button>
           </div>
 
           {/* Language Selector */}
-          <div className="flex items-center gap-2 text-sm font-medium text-black">
+          <div className="flex items-center gap-2 text-sm text-black font-medium">
             <button
-              onClick={() => setLanguage("jp")}
-              className={`hover:underline transition-colors ${language === "jp" ? "font-bold text-blue-300" : ""}`}
+              onClick={() => setLanguage("en")}
+              className={`hover:underline transition-colors ${language === "en" ? "underline-offset-4 underline font-bold text-blue-300" : ""}`}
             >
-              JP
+              EN
             </button>
             <span>|</span>
             <button
-              onClick={() => setLanguage("en")}
-              className={`hover:underline transition-colors ${language === "en" ? "font-bold text-blue-300" : ""}`}
+              onClick={() => setLanguage("jp")}
+              className={`hover:underline transition-colors ${language === "jp" ? "underline-offset-4 underline font-bold text-blue-300" : ""}`}
             >
-              EN
+              JP
             </button>
 
             {/* Mobile Menu Button */}
@@ -123,11 +132,8 @@ export default function AboutUs() {
               transition={{ duration: 0.3 }}
             >
               <div className="container mx-auto py-4 px-4 flex flex-col gap-4">
-                <a href="/products" className="text-white py-2 border-b border-slate-700">
-                  {t("Industries & Company")}
-                </a>
-                <a href="/partners" className="text-white py-2 border-b border-slate-700">
-                  {t("partners")}
+                <a href="/industries" className="text-white py-2 border-b border-slate-700">
+                  {t("products")}
                 </a>
                 <a href="/about" className="text-white py-2 border-b border-slate-700">
                   {t("aboutUs")}
@@ -141,8 +147,8 @@ export default function AboutUs() {
         </AnimatePresence>
       </header>
 
-      <div className="container mx-auto px-12">
-        <div className="max-w-4xl min-h-screen justify-center flex-col flex">
+      <div className="container mx-auto px-4 py-24 mt-16 max-w-7xl">
+        <div className="max-w-4xl mb-16">
           <CardHeader>
             <CardTitle className="text-6xl font-bold mb-12">
               <span className="bg-gradient-to-tl from-yellow-300 to-[#17D1C6] bg-clip-text text-transparent">{companyInfo.name}</span></CardTitle>
@@ -188,6 +194,16 @@ export default function AboutUs() {
               </div>
             </div>
           </CardContent>
+
+          <div className="mt-12">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center">
+            <MapPinIcon className="h-6 w-6 text-gray-500 mr-2" />
+            Our Location
+          </h2>
+          <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
+            <GoogleMap address={companyInfo.address} />
+          </div>
+        </div>
         </div>
       </div>
     </>
