@@ -171,7 +171,7 @@ export default function Home() {
           className={`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-slate-900/90 backdrop-blur-md shadow-lg" : "bg-transparent"
             }`}
         >
-          <div className="container mx-auto flex justify-between items-center px-2">
+          <div className="container mx-auto md:mx-2 flex justify-between items-center">
             <a href="/" className="flex items-center gap-2">
               <img
                 src="icon/runutoro_white.png"
@@ -202,7 +202,7 @@ export default function Home() {
             </div>
 
             {/* Language Selector */}
-            <div className="flex items-center gap-2 text-sm text-white">
+            <div className="justify-end flex items-center gap-2 text-sm text-white">
               <button
                 onClick={() => setLanguage("jp")}
                 className={`hover:underline transition-colors ${language === "jp" ? "font-bold text-blue-300" : ""}`}
@@ -260,39 +260,9 @@ export default function Home() {
             <h1 className="text-white font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6">{t("heroTitle")}</h1>
             <p className="text-white/90 text-xl sm:text-2xl lg:text-3xl font-light mb-8">{t("heroSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* <ScrollLink to="products-section" smooth={true} duration={500}>
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white border-none"
-                >
-                  {t("exploreProducts")}
-                </Button>
-              </ScrollLink> */}
-              {/* <Button
-                size="lg"
-                variant="outline"
-                className="text-white hover:text-black transition border-white bg-white/10"
-              >
-                {t("contactUs")}
-              </Button> */}
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        {/* <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-        >
-          <div className="w-8 h-12 rounded-full border-2 border-white flex justify-center">
-            <motion.div
-              className="w-1 h-3 bg-white rounded-full mt-2"
-              animate={{ y: [0, 16, 0] }}
-              transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-            />
-          </div>
-        </motion.div> */}
       </div>
 
       {/* Industries */}
@@ -315,9 +285,6 @@ export default function Home() {
                   {t("ourProducts")}
                 </span>
               </motion.h2>
-              {/* <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
-                {t("productsDescription")}
-              </motion.p> */}
             </motion.div>
 
             <motion.div
@@ -422,18 +389,12 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.div variants={fadeInUp}>
-              {/* <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
-                {t("qualityAssurance")}
-              </span> */}
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
               <span className="bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent">
                 {t("ourCertifications")}
               </span>
             </motion.h2>
-            {/* <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-slate-600">
-              {t("certificationsDescription")}
-            </motion.p> */}
           </motion.div>
 
           <motion.div

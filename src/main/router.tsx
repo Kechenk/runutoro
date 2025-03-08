@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { PageIndicator } from "@/PageIndicator";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import Inquiry from "@/Inquiry";
 import AboutUs from "@/AboutUs";
@@ -11,7 +10,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <div className="bg-[#f2f3f4]">
       <App />
-      <PageIndicator />
     </div>,
     children: [
     ],
@@ -20,7 +18,6 @@ const router = createBrowserRouter([
     path: "About",
     element:
       <div className="">
-        <PageIndicator />
         <AboutUs />
         <DotPattern />
       </div>
@@ -31,16 +28,13 @@ const router = createBrowserRouter([
       <div className="">
         <Industries />
         <DotPattern />
-        <PageIndicator />
       </div>
   },
   {
     path: "Inquiry",
     element:
-      <div className="bg-[#f2f3f4]">
+      <div className="">
         <Inquiry />
-        <DotPattern />
-        <PageIndicator />
       </div>
   },
 ]);

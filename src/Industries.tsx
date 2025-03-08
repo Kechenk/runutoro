@@ -119,7 +119,7 @@ export default function Industries() {
 
             {/* Mobile Menu Button */}
             <Button variant="ghost" size="icon" 
-              className={`${isScrolled ? "text-white" : "text-black"} `} onClick={toggleMobileMenu}>
+              className={`${isScrolled ? "text-white" : "text-black"} lg:hidden`} onClick={toggleMobileMenu}>
               {mobileMenuOpen ? <X className="h-12 w-12" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>

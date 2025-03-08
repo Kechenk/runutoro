@@ -20,7 +20,6 @@ const companyInfo = {
 }
 
 function GoogleMap({ address }: { address: string }) {
-  // Encode the address for the URL
   const encodedAddress = encodeURIComponent(address)
 
   return (
@@ -78,7 +77,6 @@ export default function AboutUs() {
             <span className="font-bold text-white text-lg hidden sm:block"></span>
           </a>
 
-          {/* Desktop Navigation */}
           <div className="gap-12 py-2 justify-center text-white hidden lg:flex items-center font-medium">
 
             <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
@@ -98,7 +96,6 @@ export default function AboutUs() {
             </Button>
           </div>
 
-          {/* Language Selector */}
           <div className="flex items-center gap-2 text-sm text-black font-medium">
             <button
               onClick={() => setLanguage("en")}
@@ -114,14 +111,12 @@ export default function AboutUs() {
               JP
             </button>
 
-            {/* Mobile Menu Button */}
             <Button variant="ghost" size="icon" className="ml-4 text-white lg:hidden" onClick={toggleMobileMenu}>
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -151,7 +146,8 @@ export default function AboutUs() {
         <div className="max-w-4xl mb-16">
           <CardHeader>
             <CardTitle className="text-6xl font-bold mb-12">
-              <span className="bg-gradient-to-tl from-yellow-300 to-[#17D1C6] bg-clip-text text-transparent">{companyInfo.name}</span></CardTitle>
+              Runutoro Japan
+              </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid gap-8">
