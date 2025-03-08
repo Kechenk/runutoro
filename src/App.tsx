@@ -174,15 +174,9 @@ export default function Home() {
           <div className="container mx-auto flex justify-between items-center px-2">
             <a href="/" className="flex items-center gap-2">
               <img
-                src="icon/runutoro.png"
-                alt="Runutoro Logo"
-                className={`w-14 absolute transition-opacity duration-500 ${isScrolled ? "opacity-0" : "opacity-100"}`}
-              />
-
-              <img
                 src="icon/runutoro_white.png"
                 alt="Runutoro Logo"
-                className={`w-14 transition-opacity duration-500 ${isScrolled ? "opacity-100" : "opacity-0"}`}
+                className="w-14 transition-opacity duration-500"
               />
               <span className="font-bold text-white text-lg hidden sm:block"></span>
             </a>
@@ -240,7 +234,7 @@ export default function Home() {
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="container mx-auto py-4 px-4 flex flex-col gap-4">
+                <div className="container mx-auto py-2 px-2 flex flex-col gap-4">
                   <a href="/industries" className="text-white py-2 border-b border-slate-700">
                     {t("products")}
                   </a>
@@ -454,9 +448,8 @@ export default function Home() {
                 key={index}
                 variants={fadeInUp}
                 className={`rounded-lg p-6 transition-all duration-300
-                  ${index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 w-3xl" :
-                    // index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 w-3xl" :
-                    index === 3 ? "md:col-start-3 md:col-end-4 md:row-start-2 w-md" : ""
+                  ${index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 md:w-md" :
+                    index === 3 ? "md:col-start-3 md:col-end-4 md:row-start-2" : ""
                   }`}
               >
                 <div className="h-full transition-all duration-500 overflow-hidden group">
