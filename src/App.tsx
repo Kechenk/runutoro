@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 // @ts-expect-error
 import { Link as ScrollLink, Element } from "react-scroll"
 import { CardTitle } from "@/components/ui/card"
-import { Facebook, Twitter, Instagram, Linkedin, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { useLanguage } from "./context/language-context"
 import { Button } from "./components/ui/button"
 
