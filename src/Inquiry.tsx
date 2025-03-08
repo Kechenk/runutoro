@@ -3,7 +3,6 @@ import { useLanguage } from "./context/language-context";
 import { Button } from "./components/ui/button";
 import { FacebookIcon, GlobeIcon, Link, LinkedinIcon, LocateIcon, MailboxIcon, Menu, PhoneIcon, TwitterIcon, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { Label } from "@radix-ui/react-dropdown-menu";
 import { Input } from "./components/ui/input";
 
 export default function Inquiry() {
