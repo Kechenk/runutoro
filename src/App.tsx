@@ -207,7 +207,7 @@ export default function Home() {
 
           <header
             className=
-            {`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-md shadow-lg`}>
+            {`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-md shadow-lg ${isScrolled ? "" : "" }`}>
             <div className="container mx-auto md:mx-2 flex justify-between items-center">
               <a href="/" className="flex items-center gap-2">
                 <img
