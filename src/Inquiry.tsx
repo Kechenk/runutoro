@@ -52,12 +52,15 @@ export default function Inquiry() {
               <a href="/">{t("home")}</a>
             </Button>
             <Button variant="ghost" className="text-black hover:bg-white/10">
-              <a href="/industries">{t("Industries & Company")}</a>
+              <a href="/industries">{t("products")}</a>
+            </Button>
+            <Button variant="ghost" className="text-black hover:bg-white/10">
+              <a href="/gallery">{t("gallery")}</a>
             </Button>
             <Button variant="ghost" className="text-black hover:bg-white/10">
               <a href="/about">{t("aboutUs")}</a>
             </Button>
-            <Button variant="ghost" className="text-black hover:bg-white/10">
+            <Button variant="ghost" className="text-white bg-black/90">
               <a href="/inquiry">{t("inquiry")}</a>
             </Button>
           </div>

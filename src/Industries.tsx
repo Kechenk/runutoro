@@ -91,6 +91,10 @@ export default function Industries() {
             </Button>
 
             <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:bg-black/50`}>
+              <a href="/gallery">{t("gallery")}</a>
+            </Button>
+
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:bg-black/50`}>
               <a href="/about">{t("aboutUs")}</a>
             </Button>
 

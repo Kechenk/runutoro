@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react"
 import { CardContent, CardHeader, CardTitle } from "./components/ui/card"
 
 const companyInfo = {
-  name: "Runutoro Japan",
+  name: "Runutoro",
   established: "22/5/2025",
   address: "遠藤4489番105, Fujisawa-shi, Kanagawa, Japan",
   capital: "Japanese Yen 5 Million",
@@ -87,6 +87,10 @@ export default function AboutUs() {
               <a href="/industries">{t("products")}</a>
             </Button>
 
+            <Button variant="ghost" className={`${isScrolled ? "text-white" : "text-black"} hover:text-white hover:bg-black/50`}>
+              <a href="/gallery">{t("gallery")}</a>
+            </Button>
+
             <Button variant="ghost" className="text-white bg-black/90">
               <a href="/about">{t("aboutUs")}</a>
             </Button>
@@ -146,15 +150,15 @@ export default function AboutUs() {
         <div className="max-w-4xl mb-16">
           <CardHeader>
             <CardTitle className="text-6xl font-bold mb-12">
-              Runutoro Japan
-              </CardTitle>
+              {t("heroTitle")}
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid gap-8">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <CalendarIcon className="h-5 w-5 text-gray-500" />
-                  <span className="text-md font-large">Established: {companyInfo.established}</span>
+                  <span className="text-md font-large">{t("estabilished")}: {companyInfo.established}</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPinIcon className="h-5 w-5 text-gray-500 mt-1" />
@@ -162,7 +166,7 @@ export default function AboutUs() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <BuildingIcon className="h-5 w-5 text-gray-500" />
-                  <span className="text-md font-large">Capital: {companyInfo.capital}</span>
+                  <span className="text-md font-large">{t("capital")} {t("currency")}</span>
                 </div>
               </div>
 
@@ -173,33 +177,37 @@ export default function AboutUs() {
                     Management
                   </h3>
                   <div className="text-left list-disc list-inside text-md pl-5 space-y-1">
-                    {companyInfo.management.map((person, index) => (
-                      <li key={index} className="pl-2">
-                        {person.name} ({person.position})
-                      </li>
-                    ))}
+                    <li className="pl-2">
+                      {t("people1")}
+                    </li>
+                    <li className="pl-2">
+                      {t("people2")}
+                    </li>
+                    <li className="pl-2">
+                      {t("people3")}
+                    </li>
                   </div>
                 </div>
                 <div className="space-y-2 text-left pl-1">
                   <h3 className="text-xl font-semibold flex items-center text-left">
                     <BriefcaseIcon className="h-5 w-5 text-gray-500 mr-2" />
-                    Business Description
+                    {t("bussinessDesc")}
                   </h3>
-                  <p className="text-md pl-7">{companyInfo.businessDescription}</p>
+                  <p className="text-md pl-7">{t("bussiness")}</p>
                 </div>
               </div>
             </div>
           </CardContent>
 
           <div className="container mx-auto px-6 py-12 max-w-7xl">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center">
-            <MapPinIcon className="h-6 w-6 text-gray-500 mr-2" />
-            Our Location
-          </h2>
-          <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
-            <GoogleMap address={companyInfo.address} />
+            <h2 className="text-2xl font-semibold mb-6 flex items-center">
+              <MapPinIcon className="h-6 w-6 text-gray-500 mr-2" />
+              {t("location")}
+            </h2>
+            <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
+              <GoogleMap address={companyInfo.address} />
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </>

@@ -16,23 +16,23 @@ const backgroundImages = [
 
 const companyData = [
   {
-    title: "TRI JAYA TANGGUH",
+    title: "PT Tri Jaya Tangguh",
     img: "/companies/TJT.png",
   },
   {
-    title: "Ilufa",
+    title: "PT Inti Luhur Fuja Abadi",
     img: "/companies/ilufa.png",
   },
   {
-    title: "Tru Spices",
+    title: "PT True Spices Indonesia",
     img: "/companies/tsi.png",
   },
   {
-    title: "Tri Mustika Langgeng Energy",
+    title: "PT Tri Mustika Langgeng Energi",
     img: "/companies/tml.png",
   },
   {
-    title: "Tri Aroma Tani",
+    title: "PT Tri Aromatani Sejahtera",
     img: "/companies/triaroma.png",
   },
 ]
@@ -73,6 +73,10 @@ const certificationData = [
   {
     title: "SSI",
     img: "/certification/ssi.webp"
+  },
+  {
+    title: "kosher",
+    img: "/certification/kosher.png"
   },
 ]
 
@@ -233,6 +237,10 @@ export default function Home() {
 
                 <Button variant="ghost" className="text-white hover:bg-white/10">
                   <a href="/industries">{t("products")}</a>
+                </Button>
+
+                <Button variant="ghost" className="text-white hover:bg-white/10">
+                  <a href="/gallery">{t("gallery")}</a>
                 </Button>
 
                 <Button variant="ghost" className="text-white hover:bg-white/10">
@@ -532,7 +540,7 @@ export default function Home() {
                   key={index}
                   variants={fadeInUp}
                   className={`rounded-lg p-6 transition-all duration-300
-                  ${index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 md:w-md" :
+                  ${index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 md:w-xl" :
                       index === 3 ? "md:col-start-3 md:col-end-4 md:row-start-2" : ""
                     }`}
                 >

@@ -317,7 +317,7 @@ export default function Gallery() {
             </Button>
 
             <Button variant="ghost" className="text-white bg-white/10">
-              <a href="/gallery">{t("Gallery")}</a>
+              <a href="/gallery">{t("gallery")}</a>
             </Button>
 
             <Button variant="ghost" className="text-white hover:bg-white/10">
@@ -380,13 +380,13 @@ export default function Gallery() {
       </header>
 
       <div>
-        <section className="container mx-auto mt-26">
+        <section className="container mx-auto mt-40">
           <div className="container mx-auto">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              className="text-center mb-16"
+              className="text-center mb-12"
             >
               <motion.div variants={fadeInUp}>
               </motion.div>
