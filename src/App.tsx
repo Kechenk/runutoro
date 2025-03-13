@@ -115,6 +115,12 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  const description = [
+    {
+      title: t('companyDesc')
+    }
+  ]
+
   const productData = [
     {
       title: t("coconutProducts"),
@@ -207,7 +213,7 @@ export default function Home() {
 
           <header
             className=
-            {`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-md shadow-lg ${isScrolled ? "" : "" }`}>
+            {`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-md shadow-lg ${isScrolled ? "" : ""}`}>
             <div className="container mx-auto md:mx-2 flex justify-between items-center">
               <a href="/" className="flex items-center gap-2">
                 <img
@@ -288,6 +294,7 @@ export default function Home() {
             </AnimatePresence>
           </header>
 
+
           <div className="relative z-20 flex h-full flex-col items-center justify-center text-center px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -302,6 +309,34 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+
+
+
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12 relative">
+              <span className="bg-gradient-to-r from-[#43338B] to-[#3E99D9] bg-clip-text text-transparent">
+                About Us
+              </span>
+            </h2>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-2xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent">
+                {/* {t("companyDesc")} */}
+              </span>
+            </motion.h2>
+
+            <div className="max-w-7xl text-2xl mx-auto text-center">
+              <div className="p-6">
+                <p className="text-lg text-slate-600">
+                  {t("companyDesc")}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8 mt-12">
+              </div>
+            </div>
+
+          </div>
+        </section>
 
         {/* Industries */}
         <Element name="products-section">
@@ -360,7 +395,7 @@ export default function Home() {
           </section>
         </Element>
 
-        {/* Partners Section */}
+
         <section className="py-24 px-4 bg-slate-50">
           <div className="container mx-auto">
             <motion.div

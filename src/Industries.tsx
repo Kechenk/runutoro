@@ -36,13 +36,13 @@ export default function Industries() {
       id: 2,
       name: t("company2Name"),
       description: t("company2Description"),
-      image: "/companies/ilufaa.jpg",
+      image: "/companies/ilufa.png",
     },
     {
       id: 3,
       name: t("company3Name"),
       description: t("company3Description"),
-      image: "/companies/truspices.jpg",
+      image: "/companies/tsi.png",
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ export default function Industries() {
       id: 5,
       name: t("company5Name"),
       description: t("company5Description"),
-      image: "/companies/triaromatani.png",
+      image: "/companies/triaroma.png",
     },
   ]
 
@@ -151,7 +151,7 @@ export default function Industries() {
         </AnimatePresence>
       </header>
 
-      <div className="container mx-auto px-4 py-24 mt-16 max-w-7xl">
+      <div className="container mx-auto px-4 py-24 mt-16 max-w-5xl">
         <h2 className="text-3xl font-bold mb-16">
           {t("industriesTitle")}
           <span className="font-light text-xl mb-12 flex mt-4">{t("industriesDescription")}</span>
@@ -166,7 +166,7 @@ export default function Industries() {
                 <img
                   src={company.image || "/placeholder.svg"}
                   alt={`${company.name} logo`}
-                  className="w-24 h-24 object-contain"
+                  className="w-36 object-contain"
                 />
               </div>
               <div className="flex-1">

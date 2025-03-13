@@ -4,6 +4,8 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 import Inquiry from "@/Inquiry";
 import AboutUs from "@/AboutUs";
 import Industries from "@/Industries";
+import Gallery from "@/Gallery";
+import { FeaturedImageGallery } from "@/Test";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,20 @@ const router = createBrowserRouter([
     element:
       <div className="">
         <Inquiry />
+      </div>
+  },
+  {
+    path: "Gallery",
+    element:
+      <div className="">
+        <Gallery />
+      </div>
+  },
+  {
+    path: "Test",
+    element:
+      <div className="">
+        <FeaturedImageGallery />
       </div>
   },
 ]);

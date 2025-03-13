@@ -94,6 +94,8 @@ export const translations = {
     company5Name: "Flavor & Fragrance (PT Tri Aromatani Sejahtera)",
     company5Description:
       "PT Tri Aromatani Sejahtera is involved in the distillation and further processing of spices and aromatic materials into essential oils. Products include nutmeg oil, clove leaf oil, and patchouli oil.",
+
+    companyDesc: "Runutoro Japan was created as a Japanese representative of our own Indonesian companies operating in primary sector commodities encompassing the industries of coconut processing, spices, flavor & fragrance, seafood, and biomass.We specialize in sourcing and delivering premium coconut products, spices, seafood, and biomass materials that meet Japan's high standards. Create sustainable trade relationships between Indonesian producers and Japanese markets, ensuring quality, reliability and fair practices.  Runutoro Japan is the Representative of Indonesian Company and ensure we will sent our best product to Japan.",
   },
   jp: {
     // Navigation
@@ -189,6 +191,8 @@ export const translations = {
     company5Name: "フレーバー＆フレグランス（PT Tri Aromatani Sejahtera）",
     company5Description:
       "PT Tri Aromatani Sejahteraは、スパイスと芳香材料の蒸留と更なる加工によるエッセンシャルオイルの製造に携わっています。製品にはナツメグオイル、クローブリーフオイル、パチョリオイルなどがあります。",
+
+    companyDesc: "Runutoroジャパンは、ココナッツ加工、スパイス、フレーバー＆フレグランス、シーフード、バイオマスの各産業を網羅する一次産業商品で事業を展開するインドネシア企業の日本代理店として設立されました。インドネシアの生産者と日本市場の間に持続可能な貿易関係を構築し、品質、信頼性、公正な慣行を保証します。 Runutoroジャパンはインドネシア企業の代表として、最高の製品を日本にお届けします。",
   },
 }
 
