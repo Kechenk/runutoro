@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"
 import { Link as ScrollLink, Element } from "react-scroll"
 import { CardTitle } from "@/components/ui/card"
 import { useLanguage } from "./context/language-context"
-import Headerss from "@/components/headers"
+import { Button } from "./components/ui/button"
+import { Menu, X } from "lucide-react"
 
 const backgroundImages = [
   "/certification/3.png",
