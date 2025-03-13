@@ -28,34 +28,34 @@ export default function Industries() {
   const companies = [
     {
       id: 1,
-      name: "Coconut & Its Derivatives (PT Tri Jaya Tangguh)",
-      description: "PT Tri Jaya Tangguh is one of Indonesia's biggest producers of coconut-related products. Products include desiccated coconut, coconut cream, coconut milk, coconut water, coconut oil, coconut expeller cake, etc.",
+      name: t("company1Name"),
+      description: t("company1Description"),
       image: "/companies/TJT.png",
     },
     {
       id: 2,
-      name: "Seafood (PT Inti Luhur Fuja Abadi)",
-      description: "PT. Inti Luhur Fuja Abadi is a seafood processor located in East Java, Indonesia. Products include dermsal fishes, pelagic fishes, and cephlapods.",
+      name: t("company2Name"),
+      description: t("company2Description"),
       image: "/companies/ilufaa.jpg",
     },
     {
       id: 3,
-      name: "Spices (PT True Spices Indonesia)",
-      description: "PT True Spices Indonesia is engaged in the selection, procurement, processing, trading, and supply of various spices from Indonesia to the global market in a sustainable way. Activities includes origin selection, transporting, sortating, hand-picking automated grading,  packing and export of single spices - Nutmeg, Mace, Cloves and Cassia",
+      name: t("company3Name"),
+      description: t("company3Description"),
       image: "/companies/truspices.jpg",
     },
     {
       id: 4,
-      name: "Biomass (PT Tri Mustika Langgeng Energi)",
-      description: "PT TML Energi utilizes industrial and plantation waste from coconuts to produce bio-pellets, a form of biomass pellets that is utilizable to help realize carbon neutrality.",
+      name: t("company4Name"),
+      description: t("company4Description"),
       image: "/companies/tml.png",
     },
     {
       id: 5,
-      name: "Flavor & Fragrance (PT Tri Aromatani Sejahtera)",
-      description: "PT Tri Aromatani Sejahtera is involved in the distillation and further processing of spices and aromatic materials into essential oils. Products include nutmeg oil, clove leaf oil, and patchouli oil.",
+      name: t("company5Name"),
+      description: t("company5Description"),
       image: "/companies/triaromatani.png",
-    }
+    },
   ]
 
   return (
@@ -152,15 +152,9 @@ export default function Industries() {
       </header>
 
       <div className="container mx-auto px-4 py-24 mt-16 max-w-7xl">
-        <h2 className="text-3xl font-bold mb-16">Industries & Companies
-          <span className="font-light text-xl mb-12 flex mt-4">
-            Runutoro Japan was created as a Japanese representative of our own Indonesian companies
-            operating in primary sector commodities encompassing the industries of coconut
-            processing, spices, flavor & fragrance, seafood, and biomass.
-            We ensure direct access to high-quality products by managing every step
-            of the supply chain—from sourcing and processing to export—guaranteeing
-            transparency, consistency, and reliability.
-          </span>
+        <h2 className="text-3xl font-bold mb-16">
+          {t("industriesTitle")}
+          <span className="font-light text-xl mb-12 flex mt-4">{t("industriesDescription")}</span>
         </h2>
         <div className="space-y-12">
           {companies.map((company) => (

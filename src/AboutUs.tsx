@@ -191,7 +191,7 @@ export default function AboutUs() {
             </div>
           </CardContent>
 
-          <div className="mt-12">
+          <div className="container mx-auto px-6 py-12 max-w-7xl">
           <h2 className="text-2xl font-semibold mb-6 flex items-center">
             <MapPinIcon className="h-6 w-6 text-gray-500 mr-2" />
             Our Location

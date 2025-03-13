@@ -3,11 +3,15 @@ import { useEffect, useState } from "react"
 // @ts-expect-error
 import { Link as ScrollLink, Element } from "react-scroll"
 import { CardTitle } from "@/components/ui/card"
-import { Menu, X } from "lucide-react"
 import { useLanguage } from "./context/language-context"
-import { Button } from "./components/ui/button"
+import Headerss from "@/components/headers"
 
-const backgroundImages = ["/DALL.E-1.webp", "/DALL.E-2.webp", "/DALL.E-3.webp", "/DALL.E-4.webp"]
+const backgroundImages = [
+  "/certification/3.png",
+  "/certification/1.jpeg",
+  "/certification/2.jpeg",
+  "/certification/4.jpeg",
+]
 
 const companyData = [
   {
@@ -16,11 +20,11 @@ const companyData = [
   },
   {
     title: "Ilufa",
-    img: "/companies/ilufaa.jpg",
+    img: "/companies/ilufa.png",
   },
   {
     title: "Tru Spices",
-    img: "/companies/truspices.jpg",
+    img: "/companies/tsi.png",
   },
   {
     title: "Tri Mustika Langgeng Energy",
@@ -28,7 +32,7 @@ const companyData = [
   },
   {
     title: "Tri Aroma Tani",
-    img: "/companies/triaromatani.png",
+    img: "/companies/triaroma.png",
   },
 ]
 
@@ -71,38 +75,69 @@ const certificationData = [
   },
 ]
 
+const galeri = [
+  {
+    img: "/Gallery Runutoro/IMG_4584-1-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_4660-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_4671-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_4699-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_4717-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_4788-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_4793-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_5028-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_5036-370x370.jpg"
+  },
+  {
+    img: "/Gallery Runutoro/IMG_5079-370x370.png"
+  },
+]
+
 export default function Home() {
   const { language, setLanguage, t } = useLanguage()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  // Define product data with translations
   const productData = [
     {
       title: t("coconutProducts"),
       description: t("coconutDescription"),
-      img: "/icon/kelapa1.png",
+      img: "/icon/1.png",
     },
     {
       title: t("exoticSpices"),
       description: t("spicesDescription"),
-      img: "/icon/spices1.png",
+      img: "/icon/2.png",
     },
     {
       title: t("naturalFlavors"),
       description: t("flavorsDescription"),
-      img: "/icon/natural1.png",
+      img: "/icon/3.png",
     },
     {
       title: t("freshSeafood"),
       description: t("seafoodDescription"),
-      img: "/icon/seafood1.png",
+      img: "/icon/4.png",
     },
     {
       title: t("biomass"),
       description: t("biomassDescription"),
-      img: "/icon/biomass1.png",
+      img: "/icon/5.png",
     },
   ]
 
@@ -122,10 +157,6 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
-  }
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -147,6 +178,7 @@ export default function Home() {
   }
 
   return (
+    <>
     <div className="min-h-screen flex flex-col">
       <div className="relative h-screen overflow-hidden">
         <AnimatePresence initial={false}>
@@ -167,88 +199,7 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
 
-        <header
-          className={`py-4 px-2 items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-slate-900/90 backdrop-blur-md shadow-lg" : "bg-transparent"
-            }`}
-        >
-          <div className="container mx-auto md:mx-2 flex justify-between items-center">
-            <a href="/" className="flex items-center gap-2">
-              <img
-                src="icon/runutoro_white.png"
-                alt="Runutoro Logo"
-                className="w-14 transition-opacity duration-500"
-              />
-              <span className="font-bold text-white text-lg hidden sm:block"></span>
-            </a>
-
-            {/* Desktop Navigation */}
-            <div className="gap-12 py-2 justify-center text-white hidden lg:flex items-center font-medium">
-
-              <Button variant="ghost" className="text-white bg-white/10">
-                <a href="/">{t("home")}</a>
-              </Button>
-
-              <Button variant="ghost" className="text-white hover:bg-white/10">
-                <a href="/industries">{t("products")}</a>
-              </Button>
-
-              <Button variant="ghost" className="text-white hover:bg-white/10">
-                <a href="/about">{t("aboutUs")}</a>
-              </Button>
-
-              <Button variant="ghost" className="text-white hover:bg-white/10">
-                <a href="/inquiry">{t("inquiry")}</a>
-              </Button>
-            </div>
-
-            {/* Language Selector */}
-            <div className="justify-end flex items-center gap-2 text-sm text-white">
-              <button
-                onClick={() => setLanguage("jp")}
-                className={`hover:underline transition-colors ${language === "jp" ? "font-bold text-blue-300" : ""}`}
-              >
-                JP
-              </button>
-              <span>|</span>
-              <button
-                onClick={() => setLanguage("en")}
-                className={`hover:underline transition-colors ${language === "en" ? "font-bold text-blue-300" : ""}`}
-              >
-                EN
-              </button>
-
-              {/* Mobile Menu Button */}
-              <Button variant="ghost" size="icon" className="ml-4 text-white lg:hidden" onClick={toggleMobileMenu}>
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </div>
-          </div>
-
-          {/* Mobile Menu */}
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                className="lg:hidden bg-slate-900/95 backdrop-blur-md"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="container mx-auto py-2 px-2 flex flex-col gap-4">
-                  <a href="/industries" className="text-white py-2 border-b border-slate-700">
-                    {t("products")}
-                  </a>
-                  <a href="/about" className="text-white py-2 border-b border-slate-700">
-                    {t("aboutUs")}
-                  </a>
-                  <a href="/inquiry" className="text-white py-2">
-                    {t("inquiry")}
-                  </a>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </header>
+          <Headerss />
 
         <div className="relative z-20 flex h-full flex-col items-center justify-center text-center px-4">
           <motion.div
@@ -276,9 +227,6 @@ export default function Home() {
               className="text-center mb-16"
             >
               <motion.div variants={fadeInUp}>
-                {/* <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
-                  {t("premiumQuality")}
-                </span> */}
               </motion.div>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent">
@@ -308,7 +256,7 @@ export default function Home() {
                       <img
                         src={product.img || "/placeholder.svg?height=100&width=100"}
                         alt={product.title}
-                        className="h-36 w-36 object-contain transition-transform duration-500"
+                        className="w-md rounded-2xl object-contain transition-transform duration-500"
                       />
                     </div>
                     {/* <CardHeader className="pb-2"> */}
@@ -378,6 +326,59 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-16"
+          >
+            <motion.div variants={fadeInUp}>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent">
+                {t("Gallery")}
+              </span>
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "" }}
+            className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8"
+          >
+            {galeri.map((gallery, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className=
+                {
+                  `p-1 transition-all duration-300
+                  ${
+                  // index === 2 ? "md:col-start-1 md:col-end-3 md:row-start-2 md:w-md" :
+                  //   index === 3 ? "md:col-start-3 md:col-end-4 md:row-start-2" : ""
+                  ""
+                  }`
+                }
+              >
+                <div className="h-full transition-all duration-500 overflow-hidden group">
+                  <div className="p-1 flex justify-center">
+                    <img
+                      src={gallery.img || "/placeholder.svg?height=100&width=100"}
+                      className="w-48 object-contain transition-transform duration-500 rounded-2xl gap-2"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* Certification Section */}
       <section className="py-24 px-4 bg-gradient-to-b from-slate-50 to-white">
@@ -565,6 +566,7 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   )
 }
 
